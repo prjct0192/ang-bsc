@@ -1,0 +1,7 @@
+<li *ngFor="let i of list">
+  <label>
+    <input *ngIf="(i.completed) === true" type="checkbox" checked/>
+    <input *ngIf ="(i.completed) === false" type="checkbox" />
+  </label>
+  {{(i.id) + ' ' + (i.title)}}
+</li>

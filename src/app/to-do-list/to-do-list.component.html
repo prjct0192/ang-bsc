@@ -2,13 +2,7 @@
 <h1>To Do list</h1>
 <div>
   <ul>
-    <li *ngFor="let i of list">
-      <label>
-        <input *ngIf="(i.completed) === true" type="checkbox" checked/>
-        <input *ngIf ="(i.completed) === false" type="checkbox" />
-      </label>
-      {{(i.id) + ' ' + (i.title)}}
-    </li>
+    <app-to-do-cont></app-to-do-cont>
   </ul>
 </div>
 
