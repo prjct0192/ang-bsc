@@ -4,13 +4,21 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
-import { ToDoContComponent } from './to-do-cont/to-do-cont.component';
+import { StyleDirective } from './directives/style.directive';
+import {MultByPipe} from './pipes/mult-by.pipe';
+import { ExMarksPipe } from './pipes/ex-marks.pipe';
+import { ToDoContentComponent } from './to-do-content/to-do-content.component';
+// import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToDoListComponent,
-    ToDoContComponent,
+    StyleDirective,
+    ToDoContentComponent,
+    // MultByPipe,
+    // ExMarksPipe,
+    // FilterPipe,
   ],
   imports: [
     BrowserModule,
