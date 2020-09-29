@@ -1,6 +1,5 @@
-import {Component, Input} from '@angular/core';
-import {List} from '../app.component';
-
+import { Component } from '@angular/core';
+import {AppComponent} from '../app.component';
 
 @Component({
   selector: 'app-to-do-list',
@@ -8,6 +7,5 @@ import {List} from '../app.component';
   styleUrls: ['./to-do-list.component.scss']
 })
 
-export class ToDoListComponent {
-  @Input() list: List;
+export class ToDoListComponent extends  AppComponent {
 }

@@ -8,14 +8,17 @@ import { StyleDirective } from './directives/style.directive';
 import {MultByPipe} from './pipes/mult-by.pipe';
 import { ExMarksPipe } from './pipes/ex-marks.pipe';
 import { ToDoContentComponent } from './to-do-content/to-do-content.component';
+import {AppCounterService} from './Services/app-counter.service';
+import { CounterComponent } from './counter/counter.component';
 // import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToDoListComponent,
-    StyleDirective,
+    // StyleDirective,
     ToDoContentComponent,
+    // CounterComponent,
     // MultByPipe,
     // ExMarksPipe,
     // FilterPipe,
@@ -24,7 +27,9 @@ import { ToDoContentComponent } from './to-do-content/to-do-content.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

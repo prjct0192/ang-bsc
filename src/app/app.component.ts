@@ -1,24 +1,22 @@
 import { Component } from '@angular/core';
+import {AppCounterService} from './Services/app-counter.service';
+import {LocalCounterService} from './Services/local-counter.service';
 
-export interface List {
+export interface Todos {
   userId?: number;
   title: string;
   completed: boolean;
   id?: number;
 }
 
-// export interface Post2 {
-//   title: string;
-//   text: string;
-// }
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  // providers: [LocalCounterService]
 })
-export class AppComponent implements List {
-  toDoLists = [
+export class AppComponent {
+  list: Todos[] = [
     {
       userId: 1,
       id: 1,
@@ -80,8 +78,7 @@ export class AppComponent implements List {
       completed: true
     }
   ];
-  completed: boolean;
-  title: string;
+
   // search = '';
   // searchField = 'title';
   // posts: Post2[] = [
@@ -95,4 +92,9 @@ export class AppComponent implements List {
   //     text: 'Bitchy fun'
   //   });
   // }
+  //
+  // constructor(
+  //   private appCounterService: AppCounterService,
+  //   private localCounterService: LocalCounterService
+  // ) {}
 }

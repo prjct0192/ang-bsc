@@ -1,7 +1,10 @@
 
 <h1>To Do list</h1>
-<ul>
-  <app-to-do-content></app-to-do-content>
-</ul>
+<div *ngFor="let l of list">
+  <label><app-to-do-content></app-to-do-content> {{l.id}} {{l.title}}</label>
+</div>
+
+
+
 
 
