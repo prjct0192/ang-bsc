@@ -7,7 +7,7 @@ import { ToDoListComponent } from './to-do-list/to-do-list.component';
 import { StyleDirective } from './directives/style.directive';
 import {MultByPipe} from './pipes/mult-by.pipe';
 import { ExMarksPipe } from './pipes/ex-marks.pipe';
-import { ToDoContentComponent } from './to-do-content/to-do-content.component';
+import { ToDoItemComponent } from './to-do-content/to-do-item.component';
 import {AppCounterService} from './Services/app-counter.service';
 import { CounterComponent } from './counter/counter.component';
 // import { FilterPipe } from './pipes/filter.pipe';
@@ -17,7 +17,7 @@ import { CounterComponent } from './counter/counter.component';
     AppComponent,
     ToDoListComponent,
     // StyleDirective,
-    ToDoContentComponent,
+    ToDoItemComponent,
     // CounterComponent,
     // MultByPipe,
     // ExMarksPipe,
