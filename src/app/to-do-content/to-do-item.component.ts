@@ -8,6 +8,6 @@ import {ToDoListComponent} from '../to-do-list/to-do-list.component';
   templateUrl: './to-do-item.component.html',
   styleUrls: ['./to-do-item.component.scss']
 })
-export class ToDoItemComponent extends ToDoListComponent{
+export class ToDoItemComponent extends ToDoListComponent {
 }
 
