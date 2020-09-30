@@ -1,6 +1,6 @@
 
-<div *ngFor="let l of list">
-  <label><input type="checkbox"/> {{l.id}} {{l.title}}</label>
+<div>
+  <label><input type="checkbox" [checked]="completed" /> {{ id }} {{ title }}</label>
 </div>
 
 
