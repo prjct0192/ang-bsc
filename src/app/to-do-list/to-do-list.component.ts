@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Todos} from '../app.component';
 
 @Component({
   selector: 'app-to-do-list',
@@ -6,7 +7,11 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./to-do-list.component.scss']
 })
 export class ToDoListComponent implements OnInit {
- async ngOnInit(): Promise<any> {
-    await fetch('https://jsonplaceholder.typicode.com/todos').then((resp) => resp.json()).then((lists) => lists);
+  list: Todos[] = [];
+
+  async ngOnInit(): Promise<any> {
+    this.list = await fetch('https://jsonplaceholder.typicode.com/todos').then((resp) => resp.json()).then((respLists) => respLists);
   }
 }
+
+
