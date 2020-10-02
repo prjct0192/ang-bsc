@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
 import { ToDoItemComponent } from './to-do-content/to-do-item.component';
+import { DirectiveDirective } from './directive/directive.directive';
+import { BodDirective } from './directive/bod.directive';
 
 
 @NgModule({
@@ -12,6 +14,9 @@ import { ToDoItemComponent } from './to-do-content/to-do-item.component';
     AppComponent,
     ToDoListComponent,
     ToDoItemComponent,
+    DirectiveDirective,
+    DirectiveDirective,
+    BodDirective,
   ],
   imports: [
     BrowserModule,
