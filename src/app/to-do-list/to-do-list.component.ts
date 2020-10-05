@@ -10,12 +10,10 @@ import {DataService} from '../services/data.service';
 export class ToDoListComponent implements OnInit {
   list: Todos[] = [];
 
-  async ngOnInit(): Promise<any> {
-    await this.getData();
-  }
   constructor(private dataService: DataService) {
   }
-  private async getData(): Promise<any> {
+
+  async ngOnInit(): Promise<any> {
     this.list = await this.dataService.getData();
   }
 }
