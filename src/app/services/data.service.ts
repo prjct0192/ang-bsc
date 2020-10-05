@@ -11,10 +11,5 @@ export class DataService {
     this.data = await response.json();
     return this.data;
   }
-  addData(name: string) {
-
-    this.data.push(name);
-  }
-
   constructor() { }
 }
