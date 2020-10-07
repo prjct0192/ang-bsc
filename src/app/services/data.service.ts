@@ -4,20 +4,22 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DataService {
-  private todos: Response;
 
 
-  constructor() { }
+
+  constructor() {
+  }
 
   async getData(): Promise<any> {
-    localStorage.getItem('todos');
-    if (this.todos) {
-        return this.todos;
+    const todos = localStorage.getItem('todos');
+
+    if (todos) {
+      return JSON.parse(todos);
       } else {
-        let todos = await fetch('https://jsonplaceholder.typicode.com/todos?_limit=10');
-        let todo = await todos.json();
-        localStorage.setItem('todos', JSON.stringify(todo));
-        return todo;
+        let resp = await fetch('https://jsonplaceholder.typicode.com/todos?_limit=10');
+        let todos = await resp.json();
+        localStorage.setItem('todos', JSON.stringify(todos));
+        return todos;
       }
     }
   }
