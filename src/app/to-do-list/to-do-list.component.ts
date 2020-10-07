@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+
 import {Todos} from '../app.component';
 import {DataService} from '../services/data.service';
 
@@ -8,6 +9,7 @@ import {DataService} from '../services/data.service';
   styleUrls: ['./to-do-list.component.scss']
 })
 export class ToDoListComponent implements OnInit {
+
   list: Todos[] = [];
 
   constructor(private dataService: DataService) {
