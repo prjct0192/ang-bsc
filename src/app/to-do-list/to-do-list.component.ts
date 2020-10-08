@@ -11,7 +11,6 @@ import {DataService} from '../services/data.service';
 export class ToDoListComponent implements OnInit {
 
   list: Todos[] = [];
-
   constructor(private dataService: DataService) {
   }
 

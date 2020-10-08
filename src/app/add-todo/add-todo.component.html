@@ -1,0 +1,14 @@
+<div class="card" style="width: 18rem;" appStyle>
+  <div class="card-body">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <p class="card-text">New to do</p>
+      <label>
+        <input type="text" formControlName="todo" (input)="onInput($event)"/>
+      </label>
+      <label>
+        <input type="radio" />
+      </label>
+      <button class="card" (click)="onClick()" type="submit" [disabled]="form.invalid">Add to do</button>
+    </form>
+  </div>
+</div>

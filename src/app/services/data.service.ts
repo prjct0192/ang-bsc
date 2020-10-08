@@ -16,8 +16,9 @@ export class DataService {
     if (todos) {
       return JSON.parse(todos);
       } else {
-        let resp = await fetch('https://jsonplaceholder.typicode.com/todos?_limit=10');
-        let todos = await resp.json();
+        const resp = await fetch('https://jsonplaceholder.typicode.com/todos?_limit=10');
+      // tslint:disable-next-line:no-shadowed-variable
+        const todos = await resp.json();
         localStorage.setItem('todos', JSON.stringify(todos));
         return todos;
       }

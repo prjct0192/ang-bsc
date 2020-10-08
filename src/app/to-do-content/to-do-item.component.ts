@@ -6,7 +6,6 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./to-do-item.component.scss']
 })
 export class ToDoItemComponent {
-  @Input() id;
   @Input() title;
   @Input() completed;
 }
