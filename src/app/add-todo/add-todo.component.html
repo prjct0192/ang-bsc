@@ -3,12 +3,27 @@
     <form [formGroup]="form" (ngSubmit)="submit()">
       <p class="card-text">New to do</p>
       <label>
-        <input type="text" formControlName="todo" (input)="onInput($event)"/>
+        <input type="text" formControlName="todo" (input)="onInput($event)" [value]="title"/>
       </label>
+      <div *ngIf="form.get('todo').invalid && form.get('todo').touched"
+        class="validation"
+      >
+        <small *ngIf="form.get('todo').errors.required">
+          Введите текст
+        </small>
+        <small *ngIf="form.get('todo').errors.minlength">
+          Текст должен содержать как минимум {{form.get('todo').errors.minlength.requiredLength}} символов.
+        </small>
+      </div>
       <label>
-        <input type="radio" />
+        <input type="checkbox" (input)="toggle($event)" [checked]="completed"
+        />
+        Выполнено?
       </label>
+
       <button class="card" (click)="onClick()" type="submit" [disabled]="form.invalid">Add to do</button>
     </form>
   </div>
 </div>
+
+

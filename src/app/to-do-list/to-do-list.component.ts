@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-
 import {Todos} from '../app.component';
 import {DataService} from '../services/data.service';
 
