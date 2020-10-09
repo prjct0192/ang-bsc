@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 
 
+
 @Component({
   selector: 'app-add-todo',
   templateUrl: './add-todo.component.html',
@@ -11,7 +12,9 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 export class AddTodoComponent implements OnInit {
   @Input() title = '';
   @Input() completed = false;
+  @Input() list;
   form: FormGroup;
+  private newTodo: any;
 
   constructor() { }
 
@@ -30,17 +33,21 @@ export class AddTodoComponent implements OnInit {
     this.completed = event.target.checked;
   }
   onClick() {
-    let newTodo = new Object({
+    this.newTodo = new Object({
       title: this.title,
       completed: this.completed
-    })
-    console.log('object', newTodo)
+    });
+    console.log('object', this.newTodo);
+
     this.form.reset();
   }
 
   submit() {
-
+    if (this.form.valid) {
+      console.log('Form: ', this.form);
+      const formData = {...this.form.value};
+      console.log('Form Data', formData);
+    }
+    this.list.unshift(this.newTodo);
   }
-
-
 }
