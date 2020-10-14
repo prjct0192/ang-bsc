@@ -9,6 +9,7 @@ import { DirectiveDirective } from './directive/directive.directive';
 import { BodDirective } from './directive/bod.directive';
 import {DataService} from './services/data.service';
 import { AddTodoComponent } from './add-todo/add-todo.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -20,10 +21,12 @@ import { AddTodoComponent } from './add-todo/add-todo.component';
     DirectiveDirective,
     BodDirective,
     AddTodoComponent,
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule
   ],
   providers: [

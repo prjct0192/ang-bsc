@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Todos} from '../app.component';
+import {Todos} from '../services/data.service';
 import {DataService} from '../services/data.service';
 
 @Component({
@@ -13,8 +13,14 @@ export class ToDoListComponent implements OnInit {
   constructor(private dataService: DataService) {
   }
 
-  async ngOnInit(): Promise<any> {
-    this.list = await this.dataService.getData();
+  ngOnInit() {
+    this.dataService.getData().subscribe(todos => {
+      this.list = todos;
+    })
+  }
+
+  updateTodos($event: Todos) {
+    this.list.unshift($event)
   }
 }
 

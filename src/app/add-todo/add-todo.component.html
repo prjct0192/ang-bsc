@@ -1,27 +1,26 @@
 <div class="card" style="width: 18rem;" appStyle>
   <div class="card-body">
-    <form [formGroup]="form" (ngSubmit)="submit()">
+    <form [formGroup]="todoForm" (ngSubmit)="ngOnInit()">
       <p class="card-text">New to do</p>
       <label>
-        <input type="text" formControlName="todo" (input)="onInput($event)" [value]="title"/>
+        <input formControlName="title" type="text"/>
       </label>
-      <div *ngIf="form.get('todo').invalid && form.get('todo').touched"
+      <div *ngIf="todoForm.get('title').invalid && todoForm.get('title').touched"
         class="validation"
       >
-        <small *ngIf="form.get('todo').errors.required">
+        <small *ngIf="todoForm.get('title').errors.required">
           Введите текст
         </small>
-        <small *ngIf="form.get('todo').errors.minlength">
-          Текст должен содержать как минимум {{form.get('todo').errors.minlength.requiredLength}} символов.
+        <small *ngIf="todoForm.get('title').errors.minlength">
+          Текст должен содержать как минимум {{todoForm.get('title').errors.minlength.requiredLength}} символов.
         </small>
       </div>
       <label>
-        <input type="checkbox" (input)="toggle($event)" [checked]="completed"
-        />
+        <input type="checkbox" formControlName="completed" state="false"/>
         Выполнено?
       </label>
 
-      <button class="card" (click)="onClick()" type="submit" [disabled]="form.invalid">Add to do</button>
+      <button class="card" (click)="onClick()" type="submit" [disabled]="todoForm.invalid">Add to do</button>
     </form>
   </div>
 </div>

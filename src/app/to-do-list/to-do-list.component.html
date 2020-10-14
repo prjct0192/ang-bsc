@@ -1,6 +1,8 @@
 <div>
   <h1>To Do list</h1>
-  <app-add-todo></app-add-todo>
+  <app-add-todo
+    (forms)="updateTodos($event)"
+  ></app-add-todo>
 
   <app-to-do-item
     *ngFor="let item of list"
